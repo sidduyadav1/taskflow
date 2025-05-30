@@ -105,17 +105,49 @@ const Createtask = () => {
 
     const employees = JSON.parse(localStorage.getItem("employees")) ;
 
+    
+
     const updatedEmployees = employees.map((employee) => {
       if (employee.firstName === Assign) {
         return {
           ...employee,
           tasks: [...employee.tasks, newTask],
+          
         };
       }
       return employee;
     });
 
-    localStorage.setItem("employees", JSON.stringify(updatedEmployees));
+    
+    const finalEmployees = updatedEmployees.map((ele) => {
+      if (ele.firstName === Assign) {
+        let active = 0;
+        let newTask = 0;
+        let completed = 0;
+        let failed = 0;
+    
+        ele.tasks.forEach((task) => {
+          if (task.active) active++;
+          if (task.newTask) newTask++;
+          if (task.completed) completed++;
+          if (task.failed) failed++;
+        });
+    
+        // ✅ Return updated employee object
+        return {
+          ...ele,
+          taskCounts: { active, newTask, completed, failed },
+        };
+      }
+    
+      return ele;
+    });
+    
+
+    console.log(finalEmployees)
+
+    localStorage.setItem("employees", JSON.stringify(finalEmployees));
+
 
     // Reset form fields
     setTitle("");
@@ -124,6 +156,9 @@ const Createtask = () => {
     setCategory("");
     setDescription("");
 
+    
+      window.location.reload();
+ 
     alert("Task created and assigned successfully!");
     // console.log("Updated Employees: ", updatedEmployees);
 

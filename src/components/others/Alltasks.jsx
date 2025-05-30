@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useContext } from 'react';
 import { Authcontex } from '../Context/Authprovider';
 
@@ -6,7 +6,13 @@ function  Alltasks(props) {
 
 
     const data=useContext(Authcontex);
-    // console.log(data.employees.taskCounts);
+    // console.log(data.employees);
+    // window.location.reload();
+    useEffect(() => {
+      // window.location.reload();
+    }, [data])
+    
+
 
   return (
 

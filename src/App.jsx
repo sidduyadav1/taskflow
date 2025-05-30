@@ -39,9 +39,10 @@ const App = () => {
 
       const data=JSON.parse(localStorage.getItem('employees'));
        
-      console.log(data)
+      // console.log(data)
 
       const employee=data.find((e)=> e.email===email && e.password===pass);
+      // console.log(employee)
      
       localStorage.setItem("loggedinuser",JSON.stringify({role:"user", data:employee }));  
       

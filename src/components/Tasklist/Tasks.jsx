@@ -15,6 +15,7 @@ const Tasks = ({data}) => {
 
     {data.tasks.map((e,index)=>{
      if(e.active){
+        
          return <Accepttask data={e} key={index}/>
       }
     if(e.newTask){

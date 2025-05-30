@@ -1,7 +1,9 @@
 import React from 'react'
 
 const TaskHistory = ({data}) => {
-    // console.log(data)
+    // const data = JSON.parse(localStorage.getItem("employees")) ;
+    console.log(data)
+
   return (
        <div className='w-full  flex flex-row justify-center items-center'>
         <div className='w-[325px] h-[18vh] p-[50px] bg-blue-300  text-amber-50 font-semibold rounded-xl  mx-[10px]'>

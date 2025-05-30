@@ -1,10 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
+import { setLocalstorage } from '../utils/Localstorage';
 
 const Submit = ({getPass}) => {
 
     const [Email, setEmail] = useState("");
     const [Pass, setPass] = useState("");
+
+    setLocalstorage();
 
     const handler=(e)=>{
         e.preventDefault();
