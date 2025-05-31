@@ -7,16 +7,29 @@ import Failedtask from './Failedtask'
 const Tasks = ({data}) => {
 
   // const data= JSON.parse( localStorage.getItem(''));
-//  console.log(data);
+//  console.log(data.tasks);
+
+   const Marktaskcomplete=(e)=>{
+    
+    data.tasks.map((ele)=>{
+      if(ele.taskDescription === e.taskDescription){
+        ele.completed=true;
+      }
+    })
+
+  console.log(data);
+  }
+
+
 
   return (
-    <div id='tasklist' key={data.id} className=' overflow-x-auto  text-zinc-100 h-[40vh] w-[95%] mt-[70px] ml-[30px] space-x-[20px] flex flex-nowrap'>
+    <div id='tasklist' key={data.id} className=' relative overflow-x-auto  text-zinc-100 h-[40vh] w-[95%] mt-[70px] ml-[30px] space-x-[20px] flex flex-nowrap'>
 
 
     {data.tasks.map((e,index)=>{
      if(e.active){
         
-         return <Accepttask data={e} key={index}/>
+         return <Accepttask data={e} key={index} Marktaskcomplete={Marktaskcomplete}/>
       }
     if(e.newTask){
       return <Newtask data={e} key={index}/>

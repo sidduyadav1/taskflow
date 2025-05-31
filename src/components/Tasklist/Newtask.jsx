@@ -9,8 +9,9 @@ function Newtask(props) {
     </div>    
     <h1 className='m-3 text-3xl font-semibold tracking-tight'> {props.data.taskTitle}</h1>
     <p className='m-3'>{props.data.taskDescription}</p>
-    <div className='m-2 bg-emerald-400'>
-        <button>Accept task</button>
+    <div className='flex justify-around m-4 absolute bottom-5 gap-5 '>
+        <button className='bg-emerald-400 p-1.5 rounded-md cursor-pointer '>Mark as completed</button>
+        <button className='bg-red-400 p-1.5 rounded-md cursor-pointer'>Mark as failed</button>
     </div>
   </div>
   )

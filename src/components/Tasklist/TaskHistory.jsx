@@ -2,7 +2,7 @@ import React from 'react'
 
 const TaskHistory = ({data}) => {
     // const data = JSON.parse(localStorage.getItem("employees")) ;
-    console.log(data)
+    // console.log(data)
 
   return (
        <div className='w-full  flex flex-row justify-center items-center'>
