@@ -11,8 +11,6 @@ const Submit = ({getPass}) => {
 
     const handler=(e)=>{
         e.preventDefault();
-        // console.log(`pass: ${Pass} email ${Email}`);
-
         getPass(Email,Pass);
         setEmail("");
         setPass("");
@@ -34,11 +32,20 @@ const Submit = ({getPass}) => {
 
     <>
 
-    <div className='flex justify-center items-center w-full h-screen relative'>
-        <form onSubmit={(e)=>{handler(e)}} className='flex flex-col gap-5 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border p-[150px] rounded-3xl border-emerald-300'>       
-            <input required type="email" value={Email} onChange={(e)=> EmailHandler(e)} placeholder='Enter you Email: ' className=' w-[40vw] border text-zinc-300 border-emerald-300 px-7 py-2 rounded-3xl'/>
-            <input required type="password" value={Pass} onChange={(e)=>PassHandler(e)} placeholder='Enter your Password :' className=' w-[40vw] border text-zinc-300 border-emerald-300 px-7 py-2 rounded-3xl'/>
-            <button className='bg-emerald-300 w-[10vw] rounded-3xl text-black p-2 cursor-pointer ' >Login</button>
+    <div className=' w-full h-screen relative '>
+      <div className=''>
+        <span className='text-6xl font-bold tracking-widest italic absolute top-[44%] left-[25%] text-zinc-500' >taskFlow</span>
+      </div>
+
+      <div className='h-[350px] bg-zinc-600 w-[2px] absolute top-[30%] left-[52%] '>
+
+      </div>
+
+
+        <form onSubmit={(e)=>{handler(e)}} className=' border-none flex flex-col items-center gap-7 absolute left-1/2 top-1/2  -translate-y-1/2 border p-[150px] rounded-3xl border-emerald-200'>       
+            <input required type="email" value={Email} onChange={(e)=> EmailHandler(e)} placeholder='Enter you Email : ' className=' w-[25vw] border text-zinc-300 border-emerald-300 px-7 py-3 rounded-md'/>
+            <input required type="password" value={Pass} onChange={(e)=>PassHandler(e)} placeholder='Enter your Password :' className=' w-[25vw] border text-zinc-300 border-emerald-300 px-7 py-3 rounded-md'/>
+            <button className='bg-emerald-200 w-[25vw] py-2 rounded-md text-black p-2 cursor-pointer ' >Login</button>
 
         </form>
     </div>

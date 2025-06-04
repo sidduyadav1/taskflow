@@ -4,21 +4,12 @@ import Newtask from './Newtask'
 import Completetask from './Completetask'
 import Failedtask from './Failedtask'
 
-const Tasks = ({data}) => {
+const Tasks = ({data , Marktaskcomplete }) => {
 
   // const data= JSON.parse( localStorage.getItem(''));
-//  console.log(data.tasks);
+//  console.log(data);
 
-   const Marktaskcomplete=(e)=>{
-    
-    data.tasks.map((ele)=>{
-      if(ele.taskDescription === e.taskDescription){
-        ele.completed=true;
-      }
-    })
-
-  console.log(data);
-  }
+   
 
 
 

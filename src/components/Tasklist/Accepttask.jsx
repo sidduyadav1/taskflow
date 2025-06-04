@@ -9,6 +9,7 @@ function Accepttask(props) {
   // console.log(props)
   const taskCompleted=(e)=>{
     props.Marktaskcomplete(e);
+    
   }
 
   return (
@@ -20,7 +21,7 @@ function Accepttask(props) {
     <h1 className='m-3 text-3xl font-semibold tracking-tight'> {props.data.taskTitle}</h1>
         <p className='m-3'>{props.data.taskDescription}</p>
     <div className='flex justify-around m-4 absolute bottom-5 gap-5 '>
-        <button  onClick={(e)=>taskCompleted(props.data)} className='bg-emerald-400 p-1.5 rounded-md cursor-pointer ' >Mark as completed</button>
+        <button  onClick={()=>taskCompleted(props.data)} className='bg-emerald-400 p-1.5 rounded-md cursor-pointer ' >Mark as completed</button>
         <button className='bg-red-400 p-1.5 rounded-md cursor-pointer'>Mark as failed</button>
     </div>
     { iscompleted && <Completetask data={props.data} /> }
